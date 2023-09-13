@@ -2,15 +2,28 @@ import React from "react";
 import HomePage from './HomePage';
 import {Route , Routes } from 'react-router-dom';
 import AboutPage from './AboutPage';
+import Header from "./Header";
 
 function App(){
 
-    const route = window.location.pathname;
+    
 
-    //if( route === "/about" ) return <AboutPage/>
-    return route === "/about" ? <AboutPage/> : <HomePage/>;
+    
+
+    function getPage(){
+        const route = window.location.pathname;
+        return route === "/about" ? <AboutPage/> : <HomePage/>;
+    }
 
 
+    return(
+        <div className="container-fluid" >
+            <Header/>
+            { getPage() }
+        </div>
+    )
+
+    
 
 
     // return(
@@ -19,9 +32,6 @@ function App(){
     //         <Route path="/ruta" Component = {AboutPage} />
     //     </Routes>
     // )
-
-
-    
 
 }
 

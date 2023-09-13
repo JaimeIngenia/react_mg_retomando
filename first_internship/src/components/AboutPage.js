@@ -5,7 +5,7 @@ function AboutPage () {
 
     return(
     <>
-        <h1>About</h1>
+        <h1 className='jumbotron' >About</h1>
     </>
 
     )
