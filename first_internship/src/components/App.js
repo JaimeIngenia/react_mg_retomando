@@ -9,18 +9,6 @@ function App(){
 
     //if( route === "/about" ) return <AboutPage/>
     return route === "/about" ? <AboutPage/> : <HomePage/>;
-
-
-
-
-    // return(
-    //     <Routes>  
-    //         <Route path="/" exact Component = {HomePage} />
-    //         <Route path="/ruta" Component = {AboutPage} />
-    //     </Routes>
-    // )
-
-
     
 
 }
