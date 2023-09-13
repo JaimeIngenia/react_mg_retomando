@@ -3,6 +3,7 @@ import HomePage from './HomePage';
 import {Route , Routes } from 'react-router-dom';
 import AboutPage from './AboutPage';
 import Header from "./Header";
+import { CoursesPages } from "./CoursesPages";
 
 function App(){
 
@@ -13,13 +14,16 @@ function App(){
     function getPage(){
         const route = window.location.pathname;
         return route === "/about" ? <AboutPage/> : <HomePage/>;
+        return route === "/courses" ? <CoursesPages />: <HomePage/>;
     }
 
 
     return(
         <div className="container-fluid" >
             <Header/>
-            { getPage() }
+            <CoursesPages/>
+            { getPage() } 
+            
         </div>
     )
 
