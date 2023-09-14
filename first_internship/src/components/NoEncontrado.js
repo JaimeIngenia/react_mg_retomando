@@ -1,11 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function NoEncontrado(){
 
 
-
-function NotFoundPage ()  {
-
-  return(
+    return (
         <div>
             <h1>NotFoundPage</h1>
 
@@ -13,9 +12,7 @@ function NotFoundPage ()  {
                 <Link to ="/">Back to Home</Link>
             </p>
         </div>
-   );
+    );
+}
 
- }
-
-
- export default NotFoundPage;
+export default NoEncontrado;

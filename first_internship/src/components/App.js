@@ -4,53 +4,36 @@ import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import Header from "./Header";
 import { CoursesPages } from "./CoursesPages";
-import {Route , Routes, Switch , Redirect} from 'react-router-dom';
-import { NotFoundPage } from "./NotFoundPage";
+import {Navigate, Route , Routes, Redirect} from 'react-router-dom';
 
-
-
+import { ManageCoursePage } from "./ManageCoursePage";
+import NotFoundPage from "./NotFoundPage";
 
 function App(){
 
-    // function getPage(){
-    //     const route = window.location.pathname;
-    //     return route === "/about" ? <AboutPage/> : <HomePage/>;
-    //     return route === "/courses" ? <CoursesPages />: <HomePage/>;
-    // }
 
     return(
         
         <div className="container-fluid" >
                 <Header/>
 
-                <switch>
+          
                     <Routes>
                         <Route path="/" exact Component={HomePage} />
                         <Route path="/courses" Component={CoursesPages} />
                         <Route path="/about" Component={AboutPage} /> 
+                        <Route path="/course" Component={ManageCoursePage} />
+                        {/* <Route path="/404" element={<NotFoundPage />} />
+          	            <Route path="*" element={<Navigate to="/404" />} />          */}
+                        
+                        
 
-                        {/* <Redirect from="/about-page" to="about"  /> */}
-
-                        <Route component={NotFoundPage} />
                     </Routes>
-                </switch>
-
-
-
-                {/* <CoursesPages/> */}
-                {/* { getPage() }  */}
                 
             </div>
 
     )
 
-    
-    // return(
-    //     <Routes>  
-    //         <Route path="/" exact Component = {HomePage} />
-    //         <Route path="/ruta" Component = {AboutPage} />
-    //     </Routes>
-    // )
 
 }
 

@@ -1,8 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const CourseList= (props) => {
-  return(
+    const [ courses, setCourses ] = useState(false);
+
+    return(
     <div>
 
         <table className='table' >
@@ -16,15 +19,19 @@ const CourseList= (props) => {
         </thead>
         <tbody>
             { props.coursesJaime.map( course => {
-                return(
-                    <>
-                        <tr  >
-                            <td  > { course.title } </td>
-                            <td  > { course.authorId } </td>
-                            <td  > { course.category } </td>
-                        </tr>
-                    </>
-                )
+
+                    return(
+                        <>
+                            <tr key={course.id} >
+                                <td> 
+                                    <Link to={"/course/" + course.slug } >  { course.title }  </Link>
+                                </td>
+                                <td  > { course.authorId } </td>
+                                <td  > { course.category } </td>
+                            </tr>
+                        </>
+                        
+                    )               
             } ) }
         </tbody>
         </table>
@@ -35,12 +42,5 @@ const CourseList= (props) => {
  }
 
 
-//  CourseList.propTypes= {
-//     courses: PropTypes.array.arrayOf( PropTypes.shape({
-//         id: PropTypes.number.isRequired,
-//         title: PropTypes.string.isRequired,
-//         category: PropTypes.string.isRequired
-//     })).isRequired
-//  };
 
  export default CourseList;

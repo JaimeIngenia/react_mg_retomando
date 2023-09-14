@@ -6,8 +6,14 @@ export const CoursesPages = (props) => {
 
     const [ courses, setCourses ] = useState([]);
 
+
     useEffect( ()=>{
-        getCourses().then(par_courses => setCourses(par_courses))
+        getCourses().then(par_courses => {
+
+            setCourses(par_courses);
+
+        } )
+        
     },[] )
 
     
