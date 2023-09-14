@@ -10,7 +10,7 @@ function HomePage(){
         <p>React, Flux, and React Router for ultra-responsive web apps.</p>
 
         {/* <a href='/about' >About</a> */}
-        <Link to="/about" className='btn btn-primary'  > About </Link>
+        {/* <Link to="/about" className='btn btn-primary'  > About </Link> */}
         
     </div>
     

@@ -4,7 +4,7 @@ import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import Header from "./Header";
 import { CoursesPages } from "./CoursesPages";
-import {Route , Routes, Switch , Redirect} from 'react-router-dom';
+import {Route , Routes , Redirect} from 'react-router-dom';
 import { NotFoundPage } from "./NotFoundPage";
 
 
@@ -23,7 +23,7 @@ function App(){
         <div className="container-fluid" >
                 <Header/>
 
-                <switch>
+
                     <Routes>
                         <Route path="/" exact Component={HomePage} />
                         <Route path="/courses" Component={CoursesPages} />
@@ -31,9 +31,9 @@ function App(){
 
                         {/* <Redirect from="/about-page" to="about"  /> */}
 
-                        <Route component={NotFoundPage} />
+                        {/* <Route component={NotFoundPage} /> */}
                     </Routes>
-                </switch>
+
 
 
 

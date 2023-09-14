@@ -9,9 +9,9 @@ function Header(){
 
     return (
         <nav>
-            <NavLink activeStyle={{ color: 'orange' }} to='/' > Home </NavLink>  {"|"}  
-            <NavLink activeStyle={activeStyleJaime} to='/about'> About </NavLink>  {"|"}  
-            <NavLink activeStyle={activeStyleJaime} to='/courses' > Courses </NavLink>
+            <NavLink to='/' > Home </NavLink>  {"|"}  
+            <NavLink to='/about'> About </NavLink>  {"|"}  
+            <NavLink to='/courses' > Courses </NavLink>
             
         </nav>
     );
