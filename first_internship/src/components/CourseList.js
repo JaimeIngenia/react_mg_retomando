@@ -9,22 +9,24 @@ let { coursesJaime } = props;
     // console.log(variable);
 
     const mapper = () =>{
-        // debugger;
-        if(props.coursesJaime.lenght>0){
-            props.variable.setState(false)
-        }
+        //  debugger;
+        // if(props.coursesJaime.lenght>0 && !props.variable.state){
 
-        return props.coursesJaime.map( course => { //Mapeto de cada course en HTML
-            return(//Objeto HTML
-                <>
-                    <tr key={course.id} >
-                        <td  > { course.title } </td>
-                        <td  > { course.authorId } </td>
-                        <td  > { course.category } </td>
-                    </tr>
-                </>
-            )
-        }) 
+            return props.coursesJaime.map( (course, index) => { //Mapeto de cada course en HTML
+                debugger;
+                return(//Objeto HTML
+                    <>
+                        <tr key={index} >
+                            <td  > { course.title } </td>
+                            <td  > { course.authorId } </td>
+                            <td  > { course.category } </td>
+                        </tr>
+                    </>
+                )
+            }) 
+        // }
+
+     
     }
 
   return(

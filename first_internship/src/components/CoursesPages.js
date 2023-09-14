@@ -18,9 +18,14 @@ export const CoursesPages = (props) => {
 
     useEffect( ()=>{
         // click();
+        debugger;
         getCourses()
-        .then(par_courses => setCourses(par_courses))
-    },[variable===true] )
+        .then(par_courses => {
+            // setVariable(false);
+            setCourses(par_courses);
+        })
+
+    },[] )
 
     function click (){
         alert("Hola hiciste un click")
