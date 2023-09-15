@@ -21,7 +21,7 @@ let { coursesJaime } = props;
                             <td  > 
 
                                 {/* <Link to={"/course/" + course.slug  }  >   { course.title }    </Link> */}
-                                <Link to={"/course/" }  >   { course.title }    </Link>
+                                <Link to={"/course/" +course.slug  }  >   { course.title }    </Link>
 
                             </td>
                             <td  > { course.authorId } </td>

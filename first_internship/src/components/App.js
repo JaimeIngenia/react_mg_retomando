@@ -9,8 +9,6 @@ import { NotFoundPage } from "./NotFoundPage";
 import { ManageCoursePage } from "./ManageCoursePage";
 
 
-
-
 function App(){
 
     // function getPage(){
@@ -29,14 +27,13 @@ function App(){
                         <Route path="/" exact Component={HomePage} />
                         <Route path="/courses" Component={CoursesPages} />
                         <Route path="/about" Component={AboutPage} /> 
-                        <Route path="/course" Component={ManageCoursePage} /> 
+                        <Route path="/course/:slug" Component={ManageCoursePage} /> 
+                        <Route path="/course" exact Component={ManageCoursePage}/> 
 
                         {/* <Redirect from="/about-page" to="about"  /> */}
 
                         {/* <Route component={NotFoundPage} /> */}
                     </Routes>
-
-
 
 
                 {/* <CoursesPages/> */}
