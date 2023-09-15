@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
 const CourseList= (props) => {
 
-    debugger;
+    // debugger;
 let { coursesJaime } = props;
 
     // console.log(variable);
@@ -13,13 +14,19 @@ let { coursesJaime } = props;
         // if(props.coursesJaime.lenght>0 && !props.variable.state){
 
             return props.coursesJaime.map( (course, index) => { //Mapeto de cada course en HTML
-                debugger;
+                // debugger;
                 return(//Objeto HTML
                     <>
                         <tr key={index} >
-                            <td  > { course.title } </td>
+                            <td  > 
+
+                                {/* <Link to={"/course/" + course.slug  }  >   { course.title }    </Link> */}
+                                <Link to={"/course/" }  >   { course.title }    </Link>
+
+                            </td>
                             <td  > { course.authorId } </td>
                             <td  > { course.category } </td>
+                            
                         </tr>
                     </>
                 )

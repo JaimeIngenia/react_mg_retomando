@@ -18,7 +18,7 @@ export const CoursesPages = (props) => {
 
     useEffect( ()=>{
         // click();
-        debugger;
+        // debugger;
         getCourses()
         .then(par_courses => {
             // setVariable(false);
