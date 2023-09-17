@@ -7,6 +7,9 @@ import { CoursesPages } from "./CoursesPages";
 import {Route , Routes , Redirect} from 'react-router-dom';
 import { NotFoundPage } from "./NotFoundPage";
 import { ManageCoursePage } from "./ManageCoursePage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 function App(){
@@ -20,6 +23,7 @@ function App(){
     return(
         
         <div className="container-fluid" >
+            <ToastContainer autoClose={3000} hideProgressBar />
                 <Header/>
 
 
