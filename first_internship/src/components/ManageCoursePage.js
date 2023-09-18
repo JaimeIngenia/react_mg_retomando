@@ -1,20 +1,17 @@
-import React, { useState,useHistory, useEffect } from 'react'
-import { Navigate, Prompt, useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import {CourseForm} from './CourseForm.js';
-import * as courseApi from "../api/courseApi.js"
-// import { Route, Routes, useNavigate } from 'react-router-dom';
-// import { withRouter } from "react-router-dom";
-import { redirect } from "react-router-dom";
-import { redirectDocument } from "react-router-dom";
-// import Navigate from "react-router-dom";
-import { useNavigate ,Redirect} from "react-router-dom";
-// import { redirectDocument } from "react-router-dom";
+import * as courseApi from "../api/courseApi.js"//PILAS CON ESTA, SE ELIMINA EN STORE: INTERACTIONS
+import { useNavigate } from "react-router-dom";
 import {toast} from 'react-toastify'
+//import CourseStore from '../stores/courseStore.js'
+
 
 export const ManageCoursePage  = (props) => {
+  let navigate = useNavigate();
   let {slug} = useParams();
   const [ errors ,setErrors ] = useState({})
-
+//prueba
   const [ course, setCourse ] = useState({
     id: null,
     slug: "",
@@ -31,6 +28,7 @@ export const ManageCoursePage  = (props) => {
       courseApi.getCourseBySlug(slug).then( _course =>
         setCourse(_course)
       )
+      // setCourse(CourseStore.getCourseBySlug(slug) )
     }
   // },[props.match.params.slug] )
 },[slug] )
@@ -58,24 +56,16 @@ export const ManageCoursePage  = (props) => {
   function handleSubmit(event){
     event.preventDefault();
     if( !formIsValid() ) return ;
+    
 
     courseApi.saveCourse(course).then( () =>{
       alert("Hola Mundo")
-      return redirectDocument("/courses");
+      
+      navigate("/courses", {replace: true});
+      //return redirectDocument("/courses");
 
       toast.success("Course saved.")
 
-      // { window.location.href = "course"; }
-
-      // <Redirect from="/" to="/home" />
-      // const history = useHistory();
-      // history.push("/courses");
-
-      // let navigate = useNavigate();
-      // return navigate("/courses");
-      // redirect("/courses")
-      // return redirectDocument("/courses");
-      // <Navigate to = "/courses"/>
 
     } );
   }
