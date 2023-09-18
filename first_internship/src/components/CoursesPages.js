@@ -1,14 +1,16 @@
 import React, { useState,useEffect } from 'react'
-import {getCourses} from "../api/courseApi" 
+//import {getCourses} from "../api/courseApi" 
+import courseStore from '../stores/courseStore.js'
 import CourseList from './CourseList'
 import { Link } from 'react-router-dom';
+import { loadCourses } from '../actions/courseActions.js';
  
 
 
 
 export const CoursesPages = (props) => {
 
-    const [ courses, setCourses ] = useState([]);
+    const [ courses, setCourses ] = useState(courseStore.getCourses());
     const [ variable, setVariable ] = useState(true);
 
     const persona = {
@@ -19,14 +21,25 @@ export const CoursesPages = (props) => {
 
     useEffect( ()=>{
 
-        getCourses()
-        .then(par_courses => {
-            setCourses(par_courses);
-        })
+
+        courseStore.addChangeListener(onChange);
+        if(courseStore.getCourses().length === 0){
+            loadCourses()
+        }
+
+        return () => courseStore.removeChangeListener(onChange);
+        
+
+        // getCourses()
+        // .then(par_courses => {
+        //     setCourses(par_courses);
+        // })
 
     },[] )
 
-
+    function onChange (){
+        setCourses(courseStore.getCourses());
+    }
 
 
     
