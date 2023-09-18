@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import {CourseForm} from './CourseForm.js';
-import * as courseApi from "../api/courseApi.js"//PILAS CON ESTA, SE ELIMINA EN STORE: INTERACTIONS
+//import * as courseApi from "../api/courseApi.js"//PILAS CON ESTA, SE ELIMINA EN STORE: INTERACTIONS
 import { useNavigate } from "react-router-dom";
 import {toast} from 'react-toastify'
-//import CourseStore from '../stores/courseStore.js'
+import courseStore from '../stores/courseStore.js'
+import * as courseActions from "../actions/courseActions.js"
 
 
 export const ManageCoursePage  = (props) => {
@@ -25,10 +26,10 @@ export const ManageCoursePage  = (props) => {
     // let slug = slug;
 
     if (slug){
-      courseApi.getCourseBySlug(slug).then( _course =>
-        setCourse(_course)
-      )
-      // setCourse(CourseStore.getCourseBySlug(slug) )
+      // courseApi.getCourseBySlug(slug).then( _course =>
+      //   setCourse(_course)
+      // )
+      setCourse(courseStore.getCourseBySlug(slug) )
     }
   // },[props.match.params.slug] )
 },[slug] )
@@ -58,7 +59,7 @@ export const ManageCoursePage  = (props) => {
     if( !formIsValid() ) return ;
     
 
-    courseApi.saveCourse(course).then( () =>{
+    courseActions.saveCourse(course).then( () =>{
       alert("Hola Mundo")
       
       navigate("/courses", {replace: true});

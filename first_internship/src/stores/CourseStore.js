@@ -5,7 +5,7 @@ import actionTypes from '../actions/actionTypes';
 const CHANGE_EVENT = "change";
 let _courses = [];
 
-class CourseStore extends EventEmitter {
+class courseStore extends EventEmitter {
 
     addChangeListener(callback){
         this.on(CHANGE_EVENT, callback)
@@ -23,7 +23,7 @@ class CourseStore extends EventEmitter {
         return _courses.find(course => course.slug === slug);
     }
 }
-const store = new CourseStore();
+const store = new courseStore();
 Dispatcher.register(action =>{
     switch(action.actionType){
         case actionTypes.CREATE_COURSE:

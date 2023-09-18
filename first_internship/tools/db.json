@@ -9,7 +9,7 @@
     },
     {
       "id": 2,
-      "title": "React: The Big Pictureeñor x 2",
+      "title": "React: The Big Picture",
       "slug": "react-big-picture",
       "authorId": 1,
       "category": "JavaScript"
@@ -72,11 +72,11 @@
     },
     {
       "id": 11,
-      "slug": "asdasdas",
-      "title": "asdasdas",
-      "authorId": 1,
-      "category": "asdasdasd",
-      "createdAt": 1695056002677
+      "slug": "sdasdasdasd",
+      "title": "sdasdasdasd",
+      "authorId": 2,
+      "category": "hola",
+      "createdAt": 1695056638229
     }
   ],
   "authors": [
