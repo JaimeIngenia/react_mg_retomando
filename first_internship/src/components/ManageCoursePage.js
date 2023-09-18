@@ -12,7 +12,7 @@ export const ManageCoursePage  = (props) => {
   let navigate = useNavigate();
   let {slug} = useParams();
   const [ errors ,setErrors ] = useState({})
-//prueba
+  const [ courses, setCourses ] = useState(courseStore.getCourses())
   const [ course, setCourse ] = useState({
     id: null,
     slug: "",
@@ -22,17 +22,23 @@ export const ManageCoursePage  = (props) => {
   });
 
   useEffect( () => {
-    // const slug = props.match.params.slug; //del path "./courses/:slug"
-    // let slug = slug;
-
-    if (slug){
-      // courseApi.getCourseBySlug(slug).then( _course =>
-      //   setCourse(_course)
-      // )
+    courseStore.addChangeListener(onChange);
+    
+    if (courses.length === 0){
+      courseActions.loadCourses();
+    } 
+    
+    else if (slug){
       setCourse(courseStore.getCourseBySlug(slug) )
     }
-  // },[props.match.params.slug] )
-},[slug] )
+
+    return () => courseStore.removeChangeListener(onChange)
+
+    },[ courses.length , slug] )
+
+  function  onChange(){
+    setCourses(courseStore.getCourses());
+  }
 
   function handleChange({target}){
     const updatedCourse = {...course, [target.name]: target.value};
