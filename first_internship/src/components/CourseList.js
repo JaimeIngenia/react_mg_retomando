@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const CourseList= (props) => {
 
@@ -17,7 +17,18 @@ let { coursesJaime } = props;
                 // debugger;
                 return(//Objeto HTML
                     <>
+                        {/* <tr  > */}
                         <tr key={index} >
+                            <td>
+                                <button 
+                                    className='btn btn-outline-danger' 
+                                    onClick={()=> props.deleteCourse(course.id) }
+                                > 
+                                
+                                DELETE
+                                
+                                </button>
+                            </td>
                             <td  > 
 
                                 {/* <Link to={"/course/" + course.slug  }  >   { course.title }    </Link> */}
@@ -43,6 +54,7 @@ let { coursesJaime } = props;
 
         <thead>
             <tr>
+                <th>&nbsp;</th>
                 <th>Title</th>
                 <th>Author ID</th>
                 <th>Category</th>
@@ -61,12 +73,13 @@ let { coursesJaime } = props;
  }
 
 
-//  CourseList.propTypes= {
-//     courses: PropTypes.array.arrayOf( PropTypes.shape({
-//         id: PropTypes.number.isRequired,
-//         title: PropTypes.string.isRequired,
-//         category: PropTypes.string.isRequired
-//     })).isRequired
-//  };
+ CourseList.propTypes= {
+    deleteCourse: PropTypes.func.isRequired,
+    courses: PropTypes.arrayOf( PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired
+    })).isRequired
+ };
 
  export default CourseList;
