@@ -1,75 +1,76 @@
-const courses = [
+const categoriasOracle = [
   {
-    id: 1,
-    title: "Securing React Apps with Auth0",
-    slug: "react-auth0-authentication-security",
-    authorId: 1,
-    category: "JavaScript"
+      "id": 1,
+      "nombre": "Aurora Estelar",
+      "descripcion": "Un objeto celestial que brilla intensamente en la noche",
+      "color": "Cielo Nocturno",
+      "codigoSeguridad": "ASTR0123"
   },
   {
-    id: 2,
-    title: "React: The Big Picture",
-    slug: "react-big-picture",
-    authorId: 1,
-    category: "JavaScript"
+      "id": 2,
+      "nombre": "Melodía Encantada",
+      "descripcion": "Una canción mágica que te hace bailar sin parar",
+      "color": "Arco Iris Sonoro",
+      "codigoSeguridad": "SONG7890"
   },
   {
-    id: 3,
-    title: "Creating Reusable React Components",
-    slug: "react-creating-reusable-components",
-    authorId: 1,
-    category: "JavaScript"
+      "id": 3,
+      "nombre": "Diamante Danzante",
+      "descripcion": "Un cristal que se mueve al ritmo de la música",
+      "color": "Brillo de Disco",
+      "codigoSeguridad": "GEM4567"
   },
   {
-    id: 4,
-    title: "Building a JavaScript Development Environment",
-    slug: "javascript-development-environment",
-    authorId: 1,
-    category: "JavaScript"
+      "id": 4,
+      "nombre": "Luna de Chocolate",
+      "descripcion": "Un satélite natural hecho de chocolate dulce",
+      "color": "Cacao Celestial",
+      "codigoSeguridad": "CHOC7890"
   },
   {
-    id: 5,
-    title: "Building Applications with React and Redux",
-    slug: "react-redux-react-router-es6",
-    authorId: 1,
-    category: "JavaScript"
+      "id": 5,
+      "nombre": "Pincel Mágico",
+      "descripcion": "Un pincel que pinta cuadros que cobran vida",
+      "color": "Paleta de Sueños",
+      "codigoSeguridad": "ART1234"
   },
   {
-    id: 6,
-    title: "Building Applications in React and Flux",
-    slug: "react-flux-building-applications",
-    authorId: 1,
-    category: "JavaScript"
+      "id": 6,
+      "nombre": "Zapatos Voladores",
+      "descripcion": "Calzado que te lleva a lugares lejanos con un paso",
+      "color": "Alas de Pies",
+      "codigoSeguridad": "FLY5678"
   },
   {
-    id: 7,
-    title: "Clean Code: Writing Code for Humans",
-    slug: "writing-clean-code-humans",
-    authorId: 1,
-    category: "Software Practices"
+      "id": 7,
+      "nombre": "Espejo Encantado",
+      "descripcion": "Un espejo que refleja tus deseos más profundos",
+      "color": "Reflejo Mágico",
+      "codigoSeguridad": "MIRR9012"
   },
   {
-    id: 8,
-    title: "Architecting Applications for the Real World",
-    slug: "architecting-applications-dotnet",
-    authorId: 1,
-    category: "Software Architecture"
+      "id": 8,
+      "nombre": "Poción de la Risas",
+      "descripcion": "Una bebida que te hace reír incontrolablemente",
+      "color": "Burbujas Felices",
+      "codigoSeguridad": "LAUG3456"
   },
   {
-    id: 9,
-    title: "Becoming an Outlier: Reprogramming the Developer Mind",
-    slug: "career-reboot-for-developer-mind",
-    authorId: 1,
-    category: "Career"
+      "id": 9,
+      "nombre": "Sombrero de las Ideas",
+      "descripcion": "Un sombrero que te inspira con pensamientos brillantes",
+      "color": "Mente Creativa",
+      "codigoSeguridad": "IDEA7890"
   },
   {
-    id: 10,
-    title: "Web Component Fundamentals",
-    slug: "web-components-shadow-dom",
-    authorId: 1,
-    category: "HTML5"
+      "id": 10,
+      "nombre": "Pluma de las Historias",
+      "descripcion": "Una pluma que escribe cuentos épicos por sí sola",
+      "color": "Tinta de Imaginación",
+      "codigoSeguridad": "STORY1234"
   }
-];
+]
+
 
 const authors = [
   { id: 1, name: "Cory House" },
@@ -87,6 +88,6 @@ const newCourse = {
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
 module.exports = {
   newCourse,
-  courses,
+  categoriasOracle,
   authors
 };

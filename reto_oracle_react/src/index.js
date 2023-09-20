@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
+// import "boostrap/dist/css/boostrap.min.css";
 
 import { NuevoVideo } from './components/nuevoVideo/NuevoVideo'
 import { Categoria } from './components/categoria/Categoria'
@@ -13,9 +14,9 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     <Header/>
-    {/* <Categoria/> */}
+    <Categoria/>
     {/* <NuevoVideo/> */}
-    <HomePage/>
+    {/* <HomePage/> */}
     <Footer/>
   </React.StrictMode>
 );

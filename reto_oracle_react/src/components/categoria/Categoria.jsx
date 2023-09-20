@@ -1,6 +1,22 @@
 import styles from './Categoria.module.css'
+import { getCategoriasOracle } from "../../api/categoriaOracleApi"
+import { useEffect, useState } from 'react'
 
 export const Categoria = () => {
+
+  const [categorias,setCategorias] = useState([])
+
+
+  useEffect( () => {
+    getCategoriasOracle().then( _categorias => {
+    setCategorias(_categorias)
+  } )
+  } ,[] )
+
+
+
+
+
   return (
     <div className={styles.container}>
       
@@ -20,7 +36,6 @@ export const Categoria = () => {
               <option value="red">Rojo</option>
               <option value="blue">Azul</option>
               <option value="green">Verde</option>
-              <option value="yellow">Amarillo</option>
           </select>
           <input type='text' className={styles.input} placeholder='Color'/>
          
@@ -39,30 +54,47 @@ export const Categoria = () => {
     
 
       <table className={styles.container__table}>
+        <thead>
+
           <tr>
               <th>Nombre</th>
               <th>Descripción</th>
               <th>Editar</th>
               <th>Remover</th>
           </tr>
-          <tr>
-              <td>Producto 1</td>
-              <td>Descripción del Producto 1</td>
-              <td>Editar</td>
-              <td>Remover</td>
-          </tr>
-          <tr>
-              <td>Producto 2</td>
-              <td>Descripción del Producto 2</td>
-              <td>Editar</td>
-              <td>Remover</td>
-          </tr>
-          <tr>
-              <td>Producto 3</td>
-              <td>Descripción del Producto 3</td>
-              <td>Editar</td>
-              <td>Remover</td>
-          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          {categorias.map( (categoria) => {
+            return(
+              <>
+                <tr key={categoria.id} >
+                    <td>{categoria.nombre}</td>
+                    <td>{categoria.descripcion}</td>
+                    <td>{categoria.color}</td>
+                    <td>{categoria.codigoSeguridad}</td>
+                </tr>
+
+
+
+                {/* <tr>
+                    <td>Producto 1</td>
+                    <td>Descripción del Producto 1</td>
+                    <td>Editar</td>
+                    <td>Remover</td>
+                </tr> */}
+              </>
+            );
+          } )}
+
+
+
+
+        </tbody>
+
       </table>
     
     </div>
