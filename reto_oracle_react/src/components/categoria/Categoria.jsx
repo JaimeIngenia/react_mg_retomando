@@ -1,20 +1,26 @@
 import styles from './Categoria.module.css'
 import { getCategoriasOracle } from "../../api/categoriaOracleApi"
 import { useEffect, useState } from 'react'
+import { CategoriaList } from '../categoriaList/CategoriaList'
+import { useParams } from "react-router-dom";
 
 export const Categoria = () => {
 
-  const [categorias,setCategorias] = useState([])
+  let {codigoSeguridad} = useParams();
+  const [ categoria, setCategoria ] = useState({
+    id: null,
+    codigoSeguridad: "",
+    nombre: "",
+    descripcion: "",
+    color: ""
+
+  })
 
 
-  useEffect( () => {
-    getCategoriasOracle().then( _categorias => {
-    setCategorias(_categorias)
-  } )
-  } ,[] )
-
-
-
+  function handleChange(event){
+    const updateCourse = { ...categoria , [ event.target.name ]: event.target.value }
+    setCategoria(updateCourse);
+  }
 
 
   return (
@@ -26,20 +32,46 @@ export const Categoria = () => {
 
       </div>
 
+      <h1>{ codigoSeguridad }</h1>
+
       <form action="" className= {styles.container__form} >
           
-          <input type='text' className={styles.input} placeholder='Nombre'/>
+          <input 
+            className={styles.input}
+            placeholder='Nombre'
+            id="nombre"
+            type='text'
+            name="title"
+            value={categoria.nombre}
+            onChange={handleChange}
+            />
 
-          <input type='text'  className={`${styles.input} ${styles.input__categoria}`} placeholder='Descripción'/>
+          <input 
+              className={`${styles.input} ${styles.input__categoria}`} 
+              placeholder='Descripción'
+              id="descripcion"
+              type='text'
+              name="descripcion"
+              value={categoria.descripcion}
+              onChange={handleChange}
+            />
 
           <select id="colorSelect" onchange="cambiarColor()">
               <option value="red">Rojo</option>
               <option value="blue">Azul</option>
               <option value="green">Verde</option>
           </select>
-          <input type='text' className={styles.input} placeholder='Color'/>
+          <input 
+              className={styles.input} 
+              placeholder='Color'
+              id="color"
+              type='text'
+              name="color"
+              value={categoria.color}
+              onChange={handleChange}
+          />
          
-          <input type='text' className={styles.input} placeholder='Código de seguridad'/>
+          {/* <input type='text' className={styles.input} placeholder='Código de seguridad'/> */}
 
       </form>
 
@@ -53,49 +85,11 @@ export const Categoria = () => {
       </div>
     
 
-      <table className={styles.container__table}>
-        <thead>
 
-          <tr>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Editar</th>
-              <th>Remover</th>
-          </tr>
-
-        </thead>
+   
 
 
-        <tbody>
-
-          {categorias.map( (categoria) => {
-            return(
-              <>
-                <tr key={categoria.id} >
-                    <td>{categoria.nombre}</td>
-                    <td>{categoria.descripcion}</td>
-                    <td>{categoria.color}</td>
-                    <td>{categoria.codigoSeguridad}</td>
-                </tr>
-
-
-
-                {/* <tr>
-                    <td>Producto 1</td>
-                    <td>Descripción del Producto 1</td>
-                    <td>Editar</td>
-                    <td>Remover</td>
-                </tr> */}
-              </>
-            );
-          } )}
-
-
-
-
-        </tbody>
-
-      </table>
+      
     
     </div>
   )

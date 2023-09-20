@@ -49,3 +49,20 @@
         height: 1px;
         background-color: #2A7AE4 ;
     }
+
+    .nav{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: flex-end;
+        align-items: center;
+        /* border: solid red 3px; */
+        width: 100%;
+        padding-right: 50px;
+    }
+
+    .navHijo{
+        border: solid red 3px;
+        
+    }
+
+    

@@ -2,8 +2,26 @@ import React from 'react'
 import styles from './HomePage.module.css'
 import fondo_home from '../../assets/fondo_home.svg'
 import foto_principal from '../../assets/foto_principal.svg'
+import { getCategoriasOracle } from "../../api/categoriaOracleApi"
+import { useEffect, useState } from 'react'
+import { CategoriaList } from '../categoriaList/CategoriaList'
+
 
 const HomePage = (props) => {
+
+    const [categorias,setCategorias] = useState([])
+
+
+    useEffect( () => {
+      getCategoriasOracle().then( _categorias => {
+      setCategorias(_categorias)
+    } )
+    } ,[] )
+  
+  
+  
+  
+
     return(
         <div className={styles.container}>
 
@@ -20,6 +38,10 @@ const HomePage = (props) => {
                 </div>
 
             </div>
+            <br /><br />
+
+            <CategoriaList categorias={categorias}  />
+
         </div>
 )
 }

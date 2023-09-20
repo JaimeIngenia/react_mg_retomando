@@ -1,23 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
-// import "boostrap/dist/css/boostrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css" ;
+import {  BrowserRouter as Router } from "react-router-dom";
+import {Route , Routes , Redirect} from 'react-router-dom';
 
 import { NuevoVideo } from './components/nuevoVideo/NuevoVideo'
 import { Categoria } from './components/categoria/Categoria'
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import HomePage from './components/homePage/HomePage';
+import HeaderNav from './components/header_nav/HeaderNav';
+import NotFound from './components/notFound/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    <Header/>
-    <Categoria/>
-    {/* <NuevoVideo/> */}
-    {/* <HomePage/> */}
-    <Footer/>
-  </React.StrictMode>
+
+  <Router>
+
+    <React.StrictMode>
+
+      <Header/>
+    {/* <Routes> */}
+      <Route path="/" exact component={HomePage} />
+      <Route path="/categoriasOracle" exact component={Categoria} />
+      <Route path="/categoriasOracle/:codigoSeguridad" component={Categoria} />
+      <Route path="/videos" component={NuevoVideo} />
+      {/* <Route component={NotFound} exact /> */}
+    {/* </Routes> */}
+
+      {/* <App /> */}
+      {/* <Categoria/> */}
+      {/* <NuevoVideo/> */}
+      {/* <HomePage/> */}
+      <Footer/>
+ 
+    </React.StrictMode>
+
+  </Router>
 );
 
