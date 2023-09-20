@@ -3,10 +3,13 @@ import { getCategoriasOracle } from "../../api/categoriaOracleApi"
 import { useEffect, useState } from 'react'
 import { CategoriaList } from '../categoriaList/CategoriaList'
 import { useParams } from "react-router-dom";
+import TextInput from '../textImput/TextInput';
+import * as categoriaOracleApi from '../../api/categoriaOracleApi'
 
 export const Categoria = () => {
 
   let {codigoSeguridad} = useParams();
+
   const [ categoria, setCategoria ] = useState({
     id: null,
     codigoSeguridad: "",
@@ -22,6 +25,11 @@ export const Categoria = () => {
     setCategoria(updateCourse);
   }
 
+  function handleSubmit(event){
+    event.preventDefault();
+    categoriaOracleApi.saveCategoriaOracle(categoria)
+  }
+  
 
   return (
     <div className={styles.container}>
@@ -34,17 +42,35 @@ export const Categoria = () => {
 
       <h1>{ codigoSeguridad }</h1>
 
-      <form action="" className= {styles.container__form} >
+      <form 
+        action="" 
+        className= {styles.container__form} 
+        onSubmit={handleSubmit}
+        >
           
-          <input 
+
+          <TextInput
+            // className={styles.input}
+            placeholder='Nombre'
+            // label='nombre'
+            id="nombre"
+            // type='text'
+            name="nombre"
+            value={categoria.nombre}
+            onChange={handleChange}
+
+          /> 
+
+          {/* <input 
             className={styles.input}
             placeholder='Nombre'
             id="nombre"
             type='text'
-            name="title"
+            name="nombre"
             value={categoria.nombre}
             onChange={handleChange}
-            />
+            /> */}
+
 
           <input 
               className={`${styles.input} ${styles.input__categoria}`} 
@@ -70,10 +96,10 @@ export const Categoria = () => {
               value={categoria.color}
               onChange={handleChange}
           />
+
+
          
           {/* <input type='text' className={styles.input} placeholder='Código de seguridad'/> */}
-
-      </form>
 
       <div className={styles.container__botones}>
           
@@ -84,6 +110,8 @@ export const Categoria = () => {
 
       </div>
     
+      </form>
+
 
 
    
