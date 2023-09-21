@@ -14,8 +14,7 @@ const HomePage = (props) => {
 
 
     useEffect( () => {
-
-
+//este era el de cargar
     //   getCategoriasOracle().then( _categorias => {
     //   setCategorias(_categorias)
     // } )
