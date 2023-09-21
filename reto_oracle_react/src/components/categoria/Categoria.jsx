@@ -32,7 +32,7 @@ export const Categoria = (props) => {
     // const codigoSeguridad = props.match.params.codigoSeguridad
     // courseStore.addChangeListener(onChange);
     
-    if (codigoSeguridad.length === 0){
+    if (codigoSeguridad){
       categoriaOracleApi.getCategoriaOracleBySlug(codigoSeguridad).then( 
         _categoria => setCategoria(_categoria) 
         )

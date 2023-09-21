@@ -159,6 +159,15 @@
       "color": "blue",
       "authorId": null,
       "createdAt": 1695302088960
+    },
+    {
+      "id": 21,
+      "codigoSeguridad": "",
+      "nombre": "fgdgdfg",
+      "descripcion": "dfgdfgdfg",
+      "color": "dfgdfgdfg",
+      "authorId": null,
+      "createdAt": 1695303786727
     }
   ],
   "authors": [

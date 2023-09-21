@@ -9,7 +9,7 @@ export function getCategoriasOracle() {
 }
 
 export function getCategoriaOracleBySlug(slug) {
-  return fetch(baseUrl + "?slug=" + slug)
+  return fetch(baseUrl + "?codigoSeguridad=" + slug)
     .then(response => {
       if (!response.ok) throw new Error("Network response was not ok.");
       return response.json().then(courses => {
