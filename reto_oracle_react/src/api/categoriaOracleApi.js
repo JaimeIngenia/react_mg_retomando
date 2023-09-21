@@ -19,6 +19,8 @@ export function getCategoriaOracleBySlug(slug) {
     })
     .catch(handleError);
 }
+ 
+
 
 export function saveCategoriaOracle(course) {
   return fetch(baseUrl + (course.id || ""), {

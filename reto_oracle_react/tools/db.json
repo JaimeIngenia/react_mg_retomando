@@ -2,10 +2,11 @@
   "categoriasOracle": [
     {
       "id": 1,
-      "nombre": "Aurora Estelar",
+      "nombre": "Aurora Estelarers",
       "descripcion": "Un objeto celestial que brilla intensamente en la noche",
       "color": "Cielo Nocturno",
-      "codigoSeguridad": "ASTR0123"
+      "codigoSeguridad": "ASTR0123",
+      "authorId": null
     },
     {
       "id": 2,
@@ -168,6 +169,33 @@
       "color": "dfgdfgdfg",
       "authorId": null,
       "createdAt": 1695303786727
+    },
+    {
+      "id": 22,
+      "codigoSeguridad": "",
+      "nombre": "asdfdsfasdf",
+      "descripcion": "asdfvfstghsdf",
+      "color": "dfgtrsdbtxfrdbxdfvb",
+      "authorId": null,
+      "createdAt": 1695315937273
+    },
+    {
+      "id": 23,
+      "codigoSeguridad": "",
+      "nombre": "Ejemplo",
+      "descripcion": "ejemplo",
+      "color": "ejemplo",
+      "authorId": null,
+      "createdAt": 1695315952584
+    },
+    {
+      "id": 24,
+      "codigoSeguridad": "",
+      "nombre": "hola",
+      "descripcion": "hola",
+      "color": "hola",
+      "authorId": null,
+      "createdAt": 1695317511412
     }
   ],
   "authors": [

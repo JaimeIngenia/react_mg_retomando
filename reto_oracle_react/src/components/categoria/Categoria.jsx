@@ -1,15 +1,15 @@
 import styles from './Categoria.module.css'
-import { getCategoriasOracle } from "../../api/categoriaOracleApi"
 import { useEffect, useState } from 'react'
-import { CategoriaList } from '../categoriaList/CategoriaList'
 import { useParams } from "react-router-dom";
 import TextInput from '../textImput/TextInput';
-import * as categoriaOracleApi from '../../api/categoriaOracleApi'
+// import * as categoriaOracleApi from '../../api/categoriaOracleApi'
 import { useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {toast} from 'react-toastify'
 import PropTypes from 'prop-types';
+import categoryStore from '../../stores/categoryStore'
+import * as categoryActions from '../../actions/categoryActions'
+
 
 export const Categoria = (props) => {
 
@@ -29,20 +29,19 @@ export const Categoria = (props) => {
 
 
   useEffect( () => {
-    // const codigoSeguridad = props.match.params.codigoSeguridad
-    // courseStore.addChangeListener(onChange);
+
     
     if (codigoSeguridad){
-      categoriaOracleApi.getCategoriaOracleBySlug(codigoSeguridad).then( 
-        _categoria => setCategoria(_categoria) 
-        )
+        setCategoria( categoryStore.getCategoryBySlug(codigoSeguridad) ) 
     } 
-    
-    // else if (slug){
-    //   setCourse(courseStore.getCourseBySlug(slug) )
-    // }
 
-    // return () => courseStore.removeChangeListener(onChange)
+    // if (codigoSeguridad){
+    //   categoriaOracleApi.getCategoriaOracleBySlug(codigoSeguridad).then( 
+    //     _categoria => setCategoria(_categoria) 
+    //     )
+    // } 
+    
+
 
     },[ codigoSeguridad ] )
 
@@ -66,10 +65,17 @@ export const Categoria = (props) => {
 
     if(!formIsValid() ) return;
 
-    categoriaOracleApi.saveCategoriaOracle(categoria).then ( ()  =>{
+    categoryActions.saveCategory(categoria).then ( ()  =>{
       navigate("/", {replace: true});
       toast.success("Categoria Guardada!.")
     });
+
+    // categoriaOracleApi.saveCategoriaOracle(categoria).then ( ()  =>{
+    //   navigate("/", {replace: true});
+    //   toast.success("Categoria Guardada!.")
+    // });
+
+
   }
   
 
