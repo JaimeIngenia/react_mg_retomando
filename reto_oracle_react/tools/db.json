@@ -87,6 +87,33 @@
       "color": "ASDasdASDasdASDasd",
       "authorId": null,
       "createdAt": 1695300074713
+    },
+    {
+      "id": 13,
+      "codigoSeguridad": "",
+      "nombre": "asdasdasd",
+      "descripcion": "fsdgdsjhgfhfsgh",
+      "color": "sfghsfghsfghsfgh",
+      "authorId": null,
+      "createdAt": 1695300652408
+    },
+    {
+      "id": 14,
+      "codigoSeguridad": "",
+      "nombre": "fdghfghsfg",
+      "descripcion": "fghfghsf",
+      "color": "gfgshjsfhgshfg",
+      "authorId": null,
+      "createdAt": 1695300717592
+    },
+    {
+      "id": 15,
+      "codigoSeguridad": "",
+      "nombre": "sfghfgdhfgh",
+      "descripcion": "fghdfghdfgh",
+      "color": "dfhgdfghdfgh",
+      "authorId": null,
+      "createdAt": 1695300739400
     }
   ],
   "authors": [

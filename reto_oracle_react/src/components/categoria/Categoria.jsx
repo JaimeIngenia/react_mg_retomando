@@ -5,9 +5,11 @@ import { CategoriaList } from '../categoriaList/CategoriaList'
 import { useParams } from "react-router-dom";
 import TextInput from '../textImput/TextInput';
 import * as categoriaOracleApi from '../../api/categoriaOracleApi'
+import { useNavigate } from "react-router-dom";
 
 export const Categoria = () => {
 
+  let navigate = useNavigate();
   let {codigoSeguridad} = useParams();
 
   const [ categoria, setCategoria ] = useState({
@@ -27,7 +29,9 @@ export const Categoria = () => {
 
   function handleSubmit(event){
     event.preventDefault();
-    categoriaOracleApi.saveCategoriaOracle(categoria)
+    categoriaOracleApi.saveCategoriaOracle(categoria).then ( ()  =>{
+      navigate("/", {replace: true});
+    });
   }
   
 
@@ -93,7 +97,7 @@ export const Categoria = () => {
           
           <div className={styles.container__botones__izq}>
             <button className={`${styles.container__botones__btn__active} ${styles.margin_btn} `} > Guardar </button>
-            <button className={styles.container__botones__btn} > Limpiar </button>
+            {/* <button className={styles.container__botones__btn} > Limpiar </button> */}
           </div>
 
       </div>
