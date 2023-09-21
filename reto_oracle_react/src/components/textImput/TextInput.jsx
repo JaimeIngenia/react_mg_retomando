@@ -4,18 +4,20 @@ import PropTypes from 'prop-types';
 
 const TextInput = (props) => {
 
-    let wrapperClass = "form-group";
+    let wrapperClass = styles.input;
+    // let wrapperClass = "form-group";
 
     if( props.error.length > 0 ){
         wrapperClass += "has-error";
+        // wrapperClass += "has-error";
     }
 
 
     return(
-        < div className={wrapperClass} >   
+        < >   
         {/* <label htmlFor={props.id} > {props.label} </label>  */}
             <input 
-                className={styles.input}
+                className={wrapperClass}
                 placeholder={props.placeholder}
                 id={props.id}
                 type='text'
@@ -26,7 +28,7 @@ const TextInput = (props) => {
             {
                 props.error && <div className='alert alert-danger'> {props.error} </div>
             }
-        </ div>
+        </>
     )
 }
 

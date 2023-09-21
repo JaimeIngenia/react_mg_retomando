@@ -50,43 +50,35 @@ export const Categoria = () => {
           
 
           <TextInput
-            // className={styles.input}
             placeholder='Nombre'
-            // label='nombre'
             id="nombre"
-            // type='text'
             name="nombre"
             value={categoria.nombre}
             onChange={handleChange}
-
           /> 
 
-          {/* <input 
-            className={styles.input}
-            placeholder='Nombre'
-            id="nombre"
-            type='text'
-            name="nombre"
-            value={categoria.nombre}
+
+          <TextInput
+            placeholder='Descripción'
+            id="descripcion"
+            name="descripcion"
+            value={categoria.descripcion}
             onChange={handleChange}
-            /> */}
+          /> 
 
 
-          <input 
-              className={`${styles.input} ${styles.input__categoria}`} 
-              placeholder='Descripción'
-              id="descripcion"
-              type='text'
-              name="descripcion"
-              value={categoria.descripcion}
-              onChange={handleChange}
-            />
-
-          <select id="colorSelect" onchange="cambiarColor()">
-              <option value="red">Rojo</option>
-              <option value="blue">Azul</option>
-              <option value="green">Verde</option>
-          </select>
+          {/* <select  
+            className={styles.input}  
+            id="colorSelect" 
+            onchange={handleChange}
+            id="color"
+            name="color"
+            value={categoria.color || "" }
+          >
+              <option value="">Rojo</option>
+              <option value="1">Azul</option>
+              <option value="2">Verde</option>
+          </select> */}
           <input 
               className={styles.input} 
               placeholder='Color'
@@ -96,10 +88,6 @@ export const Categoria = () => {
               value={categoria.color}
               onChange={handleChange}
           />
-
-
-         
-          {/* <input type='text' className={styles.input} placeholder='Código de seguridad'/> */}
 
       <div className={styles.container__botones}>
           
