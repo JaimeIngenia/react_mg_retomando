@@ -13,21 +13,41 @@ import HomePage from './components/homePage/HomePage';
 import HeaderNav from './components/header_nav/HeaderNav';
 import NotFound from './components/notFound/NotFound';
 
+
+//import * as React from "react";
+//import * as ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage/>,
+  },
+  {
+    path: "/categoriasOracle",
+    element: <Categoria/>,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <Router>
+
 
     <React.StrictMode>
-
       <Header/>
-    {/* <Routes> */}
+    <RouterProvider router={router} />
+
+    {/* <Routes>
       <Route path="/" exact component={HomePage} />
       <Route path="/categoriasOracle" exact component={Categoria} />
       <Route path="/categoriasOracle/:codigoSeguridad" component={Categoria} />
       <Route path="/videos" component={NuevoVideo} />
-      {/* <Route component={NotFound} exact /> */}
-    {/* </Routes> */}
+    </Routes> */}
 
       {/* <App /> */}
       {/* <Categoria/> */}
@@ -37,6 +57,6 @@ root.render(
  
     </React.StrictMode>
 
-  </Router>
+
 );
 
