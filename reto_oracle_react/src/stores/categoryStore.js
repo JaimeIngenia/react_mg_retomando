@@ -42,7 +42,7 @@ Dispatcher.register(action =>{
             break;
 
         case actionTypes.UPDATE_CATEGORY:
-            _categories = _categories.map( course => course.id === action.course.id ? action.course : course );
+            _categories = _categories.map( course => course.id === action.category.id ? action.category : course );
             store.emitChange();
             break;
 

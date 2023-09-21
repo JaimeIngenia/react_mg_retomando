@@ -6,10 +6,10 @@ export function saveCategory(category){
     return categoriaOracleApi.saveCategoriaOracle(category).then(savedCategory => {
         // Hey dispatcher , ve y dime todas las historias que un curso fue solamente creado
         dispatcher.dispatch({
-            actionType: actionTypes.CREATE_CATEGORY,
-            // actionType: category.id
-            //     ? actionTypes.UPDATE_COURSE 
-            //     : actionTypes.CREATE_COURSE,
+            // actionType: actionTypes.CREATE_CATEGORY,
+            actionType: category.id
+                ? actionTypes.UPDATE_CATEGORY 
+                : actionTypes.CREATE_CATEGORY,
             category: savedCategory  // En esta parte se hizo la primera acción
         });
     });
