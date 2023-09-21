@@ -17,7 +17,7 @@ export const Categoria = (props) => {
   let {codigoSeguridad} = useParams();
 
   const [ errors ,setErrors ] = useState({})
-
+const [ categorias , setCategorias ] = useState(  categoryStore.getCategories());
   const [ categoria, setCategoria ] = useState({
     id: null,
     codigoSeguridad: "",
@@ -30,10 +30,15 @@ export const Categoria = (props) => {
 
   useEffect( () => {
 
-    
-    if (codigoSeguridad){
+    categoryStore.addChangeListener(onChange);
+    if(categorias.length === 0){
+      categoryActions.loadCategories();
+    }
+    else if (codigoSeguridad){
         setCategoria( categoryStore.getCategoryBySlug(codigoSeguridad) ) 
     } 
+
+    return () => categoryStore.removeChangeListener(onChange);
 
     // if (codigoSeguridad){
     //   categoriaOracleApi.getCategoriaOracleBySlug(codigoSeguridad).then( 
@@ -41,9 +46,12 @@ export const Categoria = (props) => {
     //     )
     // } 
     
+    },[  categorias.length ,codigoSeguridad ] )
 
+    function onChange (){
+      setCategorias(categoryStore.getCategories());
+    }
 
-    },[ codigoSeguridad ] )
 
   function handleChange(event){
     const updateCourse = { ...categoria , [ event.target.name ]: event.target.value }
