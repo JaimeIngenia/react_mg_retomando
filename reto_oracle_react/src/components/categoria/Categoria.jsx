@@ -15,6 +15,8 @@ export const Categoria = () => {
   let navigate = useNavigate();
   let {codigoSeguridad} = useParams();
 
+  const [ errors ,setErrors ] = useState({})
+
   const [ categoria, setCategoria ] = useState({
     id: null,
     codigoSeguridad: "",
@@ -30,8 +32,21 @@ export const Categoria = () => {
     setCategoria(updateCourse);
   }
 
+  function formIsValid () {
+    const _errors = {};
+
+    if( !categoria.nombre) _errors.nombre = "nombre is required"
+    if( !categoria.descripcion) _errors.descripcion= "descripcion is required"
+    if( !categoria.color) _errors.color= "color is required"
+    setErrors(_errors);
+    return Object.keys(_errors).length === 0; 
+  }
+
   function handleSubmit(event){
     event.preventDefault();
+
+    if(!formIsValid() ) return;
+
     categoriaOracleApi.saveCategoriaOracle(categoria).then ( ()  =>{
       navigate("/", {replace: true});
       toast.success("Categoria Guardada!.")
@@ -63,6 +78,7 @@ export const Categoria = () => {
             name="nombre"
             value={categoria.nombre}
             onChange={handleChange}
+            error={errors.nombre}
           /> 
 
 
@@ -72,6 +88,7 @@ export const Categoria = () => {
             name="descripcion"
             value={categoria.descripcion}
             onChange={handleChange}
+            error={errors.descripcion}
           /> 
 
 
@@ -82,12 +99,28 @@ export const Categoria = () => {
             id="color"
             name="color"
             value={categoria.color || "" }
+            
           >
               <option value="">Rojo</option>
               <option value="1">Azul</option>
               <option value="2">Verde</option>
-          </select> */}
-          <input 
+          </select> 
+          {errors.color && (
+            <div className="alert alert-danger"> {errors.color}</div>
+          )}
+          */}
+
+          <TextInput
+            placeholder='Color'
+            id="color"
+            name="color"
+            value={categoria.color}
+            onChange={handleChange}
+            error={errors.color}
+          /> 
+
+
+          {/* <input 
               className={styles.input} 
               placeholder='Color'
               id="color"
@@ -95,7 +128,8 @@ export const Categoria = () => {
               name="color"
               value={categoria.color}
               onChange={handleChange}
-          />
+              error={errors.color}
+          /> */}
 
       <div className={styles.container__botones}>
           

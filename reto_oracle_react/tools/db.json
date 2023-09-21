@@ -123,6 +123,24 @@
       "color": "dasdasdas",
       "authorId": null,
       "createdAt": 1695301172918
+    },
+    {
+      "id": 17,
+      "codigoSeguridad": "",
+      "nombre": "",
+      "descripcion": "",
+      "color": "",
+      "authorId": null,
+      "createdAt": 1695301272850
+    },
+    {
+      "id": 18,
+      "codigoSeguridad": "",
+      "nombre": "",
+      "descripcion": "",
+      "color": "",
+      "authorId": null,
+      "createdAt": 1695301285366
     }
   ],
   "authors": [
