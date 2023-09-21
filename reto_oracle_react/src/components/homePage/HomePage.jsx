@@ -5,20 +5,33 @@ import foto_principal from '../../assets/foto_principal.svg'
 import { getCategoriasOracle } from "../../api/categoriaOracleApi"
 import { useEffect, useState } from 'react'
 import { CategoriaList } from '../categoriaList/CategoriaList'
-
+import courseStore from "../../stores/categoryStore"
+import { loadCategories } from '../../actions/categoryActions'
 
 const HomePage = (props) => {
 
-    const [categorias,setCategorias] = useState([])
+    const [categorias,setCategorias] = useState(courseStore.getCategories());
 
 
     useEffect( () => {
-      getCategoriasOracle().then( _categorias => {
-      setCategorias(_categorias)
-    } )
+
+
+    //   getCategoriasOracle().then( _categorias => {
+    //   setCategorias(_categorias)
+    // } )
+
+    courseStore.addChangeListener(onchange);
+
+    if( courseStore.getCategories().length === 0 ) loadCategories();
+    return () => courseStore.removeChangeListener(onchange);
+
+    
     } ,[] )
   
-  
+  function onchange (){
+
+    setCategorias(courseStore.getCategories())
+  }
   
   
 

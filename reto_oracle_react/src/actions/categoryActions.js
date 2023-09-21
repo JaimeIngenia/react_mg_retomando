@@ -15,11 +15,11 @@ export function saveCategory(category){
     });
 }
 
-export function loadCourses(){
+export function loadCategories(){
     return categoriaOracleApi.getCategoriasOracle().then(courses => {
         dispatcher.dispatch({
-            actionType: "LOAD_COURSES",
-            courses: courses
+            actionType: "LOAD_CATEGORIES",
+            categories: courses
         });
     })
 }

@@ -2,11 +2,10 @@
   "categoriasOracle": [
     {
       "id": 1,
-      "nombre": "Aurora Estelarers",
+      "nombre": "Aurora Estelar",
       "descripcion": "Un objeto celestial que brilla intensamente en la noche",
       "color": "Cielo Nocturno",
-      "codigoSeguridad": "ASTR0123",
-      "authorId": null
+      "codigoSeguridad": "ASTR0123"
     },
     {
       "id": 2,
@@ -74,128 +73,20 @@
     {
       "id": 11,
       "codigoSeguridad": "",
-      "nombre": "asdasd",
-      "descripcion": "asdasdsad",
-      "color": "",
+      "nombre": "señora",
+      "descripcion": "señora",
+      "color": "señora",
       "authorId": null,
-      "createdAt": 1695299958636
+      "createdAt": 1695322538967
     },
     {
       "id": 12,
       "codigoSeguridad": "",
-      "nombre": "asdASD",
-      "descripcion": "ASDasdASASDA",
-      "color": "ASDasdASDasdASDasd",
+      "nombre": "ASDAsd",
+      "descripcion": "ASDasd",
+      "color": "ASDasdaSD",
       "authorId": null,
-      "createdAt": 1695300074713
-    },
-    {
-      "id": 13,
-      "codigoSeguridad": "",
-      "nombre": "asdasdasd",
-      "descripcion": "fsdgdsjhgfhfsgh",
-      "color": "sfghsfghsfghsfgh",
-      "authorId": null,
-      "createdAt": 1695300652408
-    },
-    {
-      "id": 14,
-      "codigoSeguridad": "",
-      "nombre": "fdghfghsfg",
-      "descripcion": "fghfghsf",
-      "color": "gfgshjsfhgshfg",
-      "authorId": null,
-      "createdAt": 1695300717592
-    },
-    {
-      "id": 15,
-      "codigoSeguridad": "",
-      "nombre": "sfghfgdhfgh",
-      "descripcion": "fghdfghdfgh",
-      "color": "dfhgdfghdfgh",
-      "authorId": null,
-      "createdAt": 1695300739400
-    },
-    {
-      "id": 16,
-      "codigoSeguridad": "",
-      "nombre": "dsasad",
-      "descripcion": "sadasdas",
-      "color": "dasdasdas",
-      "authorId": null,
-      "createdAt": 1695301172918
-    },
-    {
-      "id": 17,
-      "codigoSeguridad": "",
-      "nombre": "",
-      "descripcion": "",
-      "color": "",
-      "authorId": null,
-      "createdAt": 1695301272850
-    },
-    {
-      "id": 18,
-      "codigoSeguridad": "",
-      "nombre": "",
-      "descripcion": "",
-      "color": "",
-      "authorId": null,
-      "createdAt": 1695301285366
-    },
-    {
-      "id": 19,
-      "codigoSeguridad": "",
-      "nombre": "gsahytrhytrh",
-      "descripcion": "yrtdhdrtfhd",
-      "color": "dyhdhyh",
-      "authorId": null,
-      "createdAt": 1695301857595
-    },
-    {
-      "id": 20,
-      "codigoSeguridad": "",
-      "nombre": "prueba",
-      "descripcion": "señora",
-      "color": "blue",
-      "authorId": null,
-      "createdAt": 1695302088960
-    },
-    {
-      "id": 21,
-      "codigoSeguridad": "",
-      "nombre": "fgdgdfg",
-      "descripcion": "dfgdfgdfg",
-      "color": "dfgdfgdfg",
-      "authorId": null,
-      "createdAt": 1695303786727
-    },
-    {
-      "id": 22,
-      "codigoSeguridad": "",
-      "nombre": "asdfdsfasdf",
-      "descripcion": "asdfvfstghsdf",
-      "color": "dfgtrsdbtxfrdbxdfvb",
-      "authorId": null,
-      "createdAt": 1695315937273
-    },
-    {
-      "id": 23,
-      "codigoSeguridad": "",
-      "nombre": "Ejemplo",
-      "descripcion": "ejemplo",
-      "color": "ejemplo",
-      "authorId": null,
-      "createdAt": 1695315952584
-    },
-    {
-      "id": 24,
-      "codigoSeguridad": "",
-      "nombre": "hola",
-      "descripcion": "hola",
-      "color": "hola",
-      "authorId": null,
-      "createdAt": 1695317511412
+      "createdAt": 1695325081711
     }
   ],
   "authors": [

@@ -48,7 +48,7 @@ Dispatcher.register(action =>{
 
 
         case actionTypes.LOAD_CATEGORIES:
-            _categories = action.courses;
+            _categories = action.categories;
             store.emitChange();
             break;
         default:
