@@ -9,8 +9,9 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {toast} from 'react-toastify'
+import PropTypes from 'prop-types';
 
-export const Categoria = () => {
+export const Categoria = (props) => {
 
   let navigate = useNavigate();
   let {codigoSeguridad} = useParams();
@@ -27,6 +28,24 @@ export const Categoria = () => {
   })
 
 
+  useEffect( () => {
+    // const codigoSeguridad = props.match.params.codigoSeguridad
+    // courseStore.addChangeListener(onChange);
+    
+    if (codigoSeguridad.length === 0){
+      categoriaOracleApi.getCategoriaOracleBySlug(codigoSeguridad).then( 
+        _categoria => setCategoria(_categoria) 
+        )
+    } 
+    
+    // else if (slug){
+    //   setCourse(courseStore.getCourseBySlug(slug) )
+    // }
+
+    // return () => courseStore.removeChangeListener(onChange)
+
+    },[ codigoSeguridad ] )
+
   function handleChange(event){
     const updateCourse = { ...categoria , [ event.target.name ]: event.target.value }
     setCategoria(updateCourse);
@@ -35,9 +54,9 @@ export const Categoria = () => {
   function formIsValid () {
     const _errors = {};
 
-    if( !categoria.nombre) _errors.nombre = "nombre is required"
-    if( !categoria.descripcion) _errors.descripcion= "descripcion is required"
-    if( !categoria.color) _errors.color= "color is required"
+    if( !categoria.nombre) _errors.nombre = "nombre es requerida"
+    if( !categoria.descripcion) _errors.descripcion= "descripcion es requerida"
+    if( !categoria.color) _errors.color= "color es requerida"
     setErrors(_errors);
     return Object.keys(_errors).length === 0; 
   }
@@ -151,4 +170,13 @@ export const Categoria = () => {
     
     </div>
   )
+}
+
+
+Categoria.protoTypes = {
+  categoria: PropTypes.object.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+
 }

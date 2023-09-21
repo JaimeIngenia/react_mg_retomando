@@ -33,6 +33,10 @@ const router = createBrowserRouter([
     path: "/categoriasOracle",
     element: <Categoria/>,
   },
+  {
+    path: "/categoriasOracle/:codigoSeguridad",
+    element: <Categoria/>,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
