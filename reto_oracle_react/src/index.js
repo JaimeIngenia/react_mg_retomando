@@ -12,6 +12,8 @@ import Footer from './components/footer/Footer';
 import HomePage from './components/homePage/HomePage';
 import HeaderNav from './components/header_nav/HeaderNav';
 import NotFound from './components/notFound/NotFound';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 //import * as React from "react";
@@ -39,6 +41,7 @@ root.render(
 
 
     <React.StrictMode>
+      <ToastContainer autoClose={3000} hideProgressBar />
       <Header/>
     <RouterProvider router={router} />
 

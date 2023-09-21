@@ -114,6 +114,15 @@
       "color": "dfhgdfghdfgh",
       "authorId": null,
       "createdAt": 1695300739400
+    },
+    {
+      "id": 16,
+      "codigoSeguridad": "",
+      "nombre": "dsasad",
+      "descripcion": "sadasdas",
+      "color": "dasdasdas",
+      "authorId": null,
+      "createdAt": 1695301172918
     }
   ],
   "authors": [

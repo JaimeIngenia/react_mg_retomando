@@ -6,6 +6,9 @@ import { useParams } from "react-router-dom";
 import TextInput from '../textImput/TextInput';
 import * as categoriaOracleApi from '../../api/categoriaOracleApi'
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {toast} from 'react-toastify'
 
 export const Categoria = () => {
 
@@ -31,6 +34,7 @@ export const Categoria = () => {
     event.preventDefault();
     categoriaOracleApi.saveCategoriaOracle(categoria).then ( ()  =>{
       navigate("/", {replace: true});
+      toast.success("Categoria Guardada!.")
     });
   }
   
