@@ -29,6 +29,7 @@ const store = new categoryStore();
 
 Dispatcher.register(action =>{
     switch(action.actionType){
+        
         case actionTypes.DELETE_CATEGORY:
             _categories = _categories.filter(
                 course => course.id !== parseInt(action.id , 10)

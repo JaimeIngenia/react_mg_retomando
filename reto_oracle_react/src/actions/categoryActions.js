@@ -24,10 +24,11 @@ export function loadCategories(){
     })
 }
 
-export function deleteCourse(id){
+export function deleteCategory(id){
     return categoriaOracleApi.deleteCategoriaOracle(id).then( () => {
         dispatcher.dispatch({
-            actionType: "DELETE_COURSE",
+            // actionType: actionTypes.DELETE_CATEGORY,
+            actionType: "DELETE_CATEGORY",
             id: id
         });
     });

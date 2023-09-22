@@ -6,7 +6,7 @@ import { getCategoriasOracle } from "../../api/categoriaOracleApi"
 import { useEffect, useState } from 'react'
 import { CategoriaList } from '../categoriaList/CategoriaList'
 import courseStore from "../../stores/categoryStore"
-import { loadCategories } from '../../actions/categoryActions'
+import { loadCategories,deleteCategory } from '../../actions/categoryActions'
 
 const HomePage = (props) => {
 
@@ -52,7 +52,7 @@ const HomePage = (props) => {
             </div>
             <br /><br />
 
-            <CategoriaList categorias={categorias}  />
+            <CategoriaList categorias={categorias} deleteCategory={deleteCategory} />
 
         </div>
 )

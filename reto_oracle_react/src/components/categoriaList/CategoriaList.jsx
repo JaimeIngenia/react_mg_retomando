@@ -14,6 +14,7 @@ export const CategoriaList
         <th>Nombre</th>
         <th>Descripción</th>
         <th>Color</th>
+        <td> &nbsp; </td>
         {/* <th>Código de Seguridad</th> */}
     </tr>
 
@@ -32,6 +33,16 @@ export const CategoriaList
                 </td>
                 <td>{categoria.descripcion}</td>
                 <td>{categoria.color}</td>
+
+                <td>
+                    <button
+                        className='btn btn-outline-danger'
+                        onClick={ () => props.deleteCategory(categoria.id) }
+                    >
+                    Delete
+                    </button>
+                </td>
+                
                 {/* <td>{categoria.codigoSeguridad}</td> */}
             </tr>
 
@@ -60,6 +71,7 @@ export const CategoriaList
 
 
 CategoriaList.propTypes = {
+deleteCourse: PropTypes.func.isRequired,
 categorias: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     nombre: PropTypes.string.isRequiered,

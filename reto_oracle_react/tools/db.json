@@ -1,34 +1,6 @@
 {
   "categoriasOracle": [
     {
-      "id": 1,
-      "nombre": "Aurora Estelar",
-      "descripcion": "Un objeto celestial que brilla intensamente en la noche",
-      "color": "Cielo Nocturno",
-      "codigoSeguridad": "ASTR0123"
-    },
-    {
-      "id": 2,
-      "nombre": "Melodía Encantada",
-      "descripcion": "Una canción mágica que te hace bailar sin parar",
-      "color": "Arco Iris Sonoro",
-      "codigoSeguridad": "SONG7890"
-    },
-    {
-      "id": 3,
-      "nombre": "Diamante Danzante",
-      "descripcion": "Un cristal que se mueve al ritmo de la música",
-      "color": "Brillo de Disco",
-      "codigoSeguridad": "GEM4567"
-    },
-    {
-      "id": 4,
-      "nombre": "Luna de Chocolate",
-      "descripcion": "Un satélite natural hecho de chocolate dulce",
-      "color": "Cacao Celestial",
-      "codigoSeguridad": "CHOC7890"
-    },
-    {
       "id": 5,
       "nombre": "Pincel Mágico",
       "descripcion": "Un pincel que pinta cuadros que cobran vida",
@@ -69,24 +41,6 @@
       "descripcion": "Una pluma que escribe cuentos épicos por sí sola",
       "color": "Tinta de Imaginación",
       "codigoSeguridad": "STORY1234"
-    },
-    {
-      "id": 11,
-      "codigoSeguridad": "",
-      "nombre": "señora",
-      "descripcion": "señora",
-      "color": "señora",
-      "authorId": null,
-      "createdAt": 1695322538967
-    },
-    {
-      "id": 12,
-      "codigoSeguridad": "",
-      "nombre": "ASDAsd",
-      "descripcion": "ASDasd",
-      "color": "ASDasdaSD",
-      "authorId": null,
-      "createdAt": 1695325081711
     }
   ],
   "authors": [
