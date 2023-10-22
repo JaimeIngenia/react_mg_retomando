@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+
+:root {
+    --color-letras: rgb(189, 189, 189);
+    --color-btn-active: #2A7AE4;
+    --color-btn: #9E9E9E;
+    --color-letras-negras: rgb(16, 16, 16);
+    --background: #020202;
+  }
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+    /* color: red; */
+}
+.container{
+    width: 100%;
+    /* height: 10vh; */
+    /* border: dotted rgb(10, 10, 100) 5px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+    font-family: 'Roboto', sans-serif;
+    /* padding-left: 50px; */
+}
+    .container__image{
+        /* border: solid red 3px; */
+        height: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        background: var(--background);
+    }
+        .parrafos{
+            /* border: solid red 3px; */
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: var(--background);
+        }
+
+        .parrafos p{
+            margin: auto;
+        }
+
+        .social__networks{
+            /* border: solid rgb(15, 13, 162) 3px; */
+            width: 6%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social__networks img{
+            height: 20px;
+            width: 20px;
+        }
+        .container__image img {
+            width: 100%;
+        }
+
+    .container__nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        /* border: dotted red 3px; */
+        width: 100%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+        .container__nav__input{
+            width: 50%;
+        }
+        .container__nav__logo{
+            width: 58%;
+        }
+
+
+        .container__right{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 10%;
+            /* border: dotted fuchsia 4px; */
+        }
+
+            .container__car{
+                /* border: dotted red 3px; */
+                padding-top: 5px;
+                position: relative;
+            }
+                .container__car img{
+                    width: 22px;
+                }
+
+                .container__car div{
+                    position: relative;
+                }
+                .container__car__circle{
+                    top: -24px;
+                    left: 11px;
+                    width: 10px;
+                    
+                    height: 10px;
+                    background-color: #0156FF;
+                    border-radius: 50%; 
+
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Poppins;
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .container__car__circle__img{
+                    width: 20px;
+                }
+            
+     
+/*  RESPONSIVE***************************************************************************** */
+
+  @media only screen and (max-width:1315px) {
+
+    .parrafos{
+        font-size: 10px;
+    }
+
+    }
+
+
+/*  RESPONSIVE***************************************************************************** */
+
+  @media only screen and (max-width:865px) {
+
+    .parrafos{
+        font-size: 8px;
+    }
+
+    }
+
+
+    /*  RESPONSIVE***************************************************************************** */
+
+  @media only screen and (max-width:660px) {
+
+    .parrafos{
+        font-size: 6px;
+    }
+
+    }
